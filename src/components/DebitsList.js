@@ -18,8 +18,8 @@ class DebitsList extends Component {
     return (
       <div>
         <h3>Current debits: </h3>
-        {this.state.debits.map(debs =>
-          <div>
+        {this.state.debits.map((debs, i) =>
+          <div key={i}>
             <p>{debs.description}</p>
             <p>{debs.amount}</p>
             <p>{debs.date}</p>
