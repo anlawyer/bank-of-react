@@ -37,7 +37,7 @@ class App extends Component {
           <Route exact path='/' render={HomeComponent} />
           <Route exact path='/userProfile' render={UserProfileComponent} />
           <Route exact path="/login" render={LoginComponent}/>
-          <DebitsList />
+          <Route exact path='/debit' component={DebitsList} />
         </div>
       </Router>
     );

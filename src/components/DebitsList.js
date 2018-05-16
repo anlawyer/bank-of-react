@@ -7,6 +7,7 @@ class DebitsList extends Component {
   }
 
   componentDidMount() {
+    console.log('mounted');
     axios.get('/debits')
       .then((response) => {
         this.setState({debits: response.data})
@@ -16,7 +17,14 @@ class DebitsList extends Component {
   render() {
     return (
       <div>
-        {JSON.stringify(this.state.debits)}
+        <h3>Current debits: </h3>
+        {this.state.debits.map(debs =>
+          <div>
+            <p>{debs.description}</p>
+            <p>{debs.amount}</p>
+            <p>{debs.date}</p>
+          </div>
+        )}
       </div>
     )
   }
